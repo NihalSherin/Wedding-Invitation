@@ -7,8 +7,8 @@
     --text-primary: #5c676d; /* Darkish grey for readable text */
     --text-gold: #b38b4d; /* Goldish text for headers */
     --text-teal: #58a0b9;
-    --font-script: 'Great Vibes', cursive;
-    --font-serif: 'Cinzel', serif;
+    --font-script: 'Pinyon Script', cursive;
+    --font-serif: 'Playfair Display', serif;
     --font-sans: 'Montserrat', sans-serif;
 }
 
@@ -186,10 +186,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-section .ampersand {
-    font-size: 0.4em;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 0.35em;
     color: var(--text-gold);
     display: inline-block;
-    margin: 10px 0;
+    margin: 5px 0;
 }
 
 /* ==========================================================================
@@ -204,6 +206,10 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    position: relative;
+    z-index: 2;
+    -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 150px), transparent 100%);
+    mask-image: linear-gradient(to bottom, black calc(100% - 150px), transparent 100%);
 }
 
 .frame-container {
@@ -217,13 +223,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .invite-intro {
     font-family: var(--font-serif);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
     color: var(--text-gold);
-    letter-spacing: 4px;
-    margin-bottom: 1rem;
+    letter-spacing: 5px;
+    margin-bottom: 2rem;
     text-transform: uppercase;
-    line-height: 1.4;
+    line-height: 1.6;
 }
 
 .couple-names {
@@ -233,7 +239,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--text-gold);
     margin-bottom: 1.5rem;
     font-weight: normal;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+    text-shadow: none;
 }
 
 .divider-ornament {
@@ -241,24 +247,24 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     justify-content: center;
     color: var(--text-gold);
-    margin: 1rem 0;
-    opacity: 0.9;
+    margin: 1.5rem 0;
+    opacity: 1;
 }
 
 .divider-ornament svg {
-    width: 80%;
-    max-width: 250px;
+    width: 100%;
+    max-width: 180px;
     height: auto;
 }
 
 .date-time-primary {
     font-family: var(--font-serif);
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 600;
     color: var(--text-gold);
-    letter-spacing: 3px;
+    letter-spacing: 4px;
     line-height: 1.5;
-    margin: 0.5rem 0;
+    margin: 1rem 0;
 }
 
 /* ==========================================================================
@@ -272,10 +278,20 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
+.details-section {
+    margin-top: -150px;
+    position: relative;
+    z-index: 1;
+}
+
 .watercolor-overlay {
     background: rgba(255, 255, 255, 0.4);
     padding: 4rem 2rem;
     height: 100%;
+}
+
+.details-section .watercolor-overlay {
+    padding-top: calc(4rem + 150px);
 }
 
 .parents-names h2 {

@@ -28,6 +28,38 @@ document.addEventListener('DOMContentLoaded', () => {
     const iconPlay = document.getElementById('icon-play');
     const iconPause = document.getElementById('icon-pause');
 
+    // --- Auto Scroll Logic ---
+    let isAutoScrolling = false;
+    let autoScrollAnimationId;
+
+    function startAutoScroll() {
+        isAutoScrolling = true;
+        let currentScroll = window.scrollY;
+        
+        function scrollStep() {
+            if (!isAutoScrolling) return;
+            
+            // Scroll down very slowly (0.4 pixels per frame)
+            currentScroll += 0.4;
+            window.scrollTo(0, currentScroll);
+            
+            // Stop if we reach the bottom
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                isAutoScrolling = false;
+                return;
+            }
+            
+            autoScrollAnimationId = requestAnimationFrame(scrollStep);
+        }
+        
+        autoScrollAnimationId = requestAnimationFrame(scrollStep);
+    }
+
+    // Stop auto-scroll if user interacts manually
+    window.addEventListener('touchstart', () => isAutoScrolling = false, {passive: true});
+    window.addEventListener('wheel', () => isAutoScrolling = false, {passive: true});
+    window.addEventListener('mousedown', () => isAutoScrolling = false, {passive: true});
+
     // --- Door Opening & Music ---
     let isMusicPlaying = false;
 
@@ -51,6 +83,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // After animation finishes, we can remove the door container from DOM to save memory
             setTimeout(() => {
                 doorContainer.style.display = 'none';
+                
+                // Start the slow auto-scroll down the page
+                startAutoScroll();
             }, 1500); // 1.5s matches CSS transition duration
             
         }, 500); 

@@ -2,9 +2,9 @@
 // CONFIGURATION (EDIT NAMES HERE)
 // ==========================================
 const weddingConfig = {
-    brideName: "Suja",
-    groomName: "Ashwin",
-    initials: "A&S"
+    brideName: "Juby",
+    groomName: "Jijo",
+    initials: "J&J"
 };
 // ==========================================
 
@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('seal-initials').innerText = weddingConfig.initials;
     document.getElementById('bride-name-1').innerText = weddingConfig.brideName;
     document.getElementById('groom-name-1').innerText = weddingConfig.groomName;
-    document.getElementById('bride-name-2').innerText = weddingConfig.brideName;
-    document.getElementById('groom-name-2').innerText = weddingConfig.groomName;
+    // document.getElementById('bride-name-2').innerText = weddingConfig.brideName;
+    // document.getElementById('groom-name-2').innerText = weddingConfig.groomName;
     
     // --- Elements ---
     const doorContainer = document.getElementById('door-screen');
@@ -130,8 +130,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     // --- Countdown Timer ---
-    // Target date: Friday, 29th May 2026 19:00:00 (7 PM)
-    const targetDate = new Date("May 29, 2026 19:00:00").getTime();
+    // Target date: Thursday, 28th May 2026 14:30:00 (2:30 PM)
+    const targetDate = new Date("May 28, 2026 14:30:00").getTime();
 
     const daysEl = document.getElementById('days');
     const hoursEl = document.getElementById('hours');

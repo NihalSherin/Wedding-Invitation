@@ -422,15 +422,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .action-buttons {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     gap: 15px;
     margin-bottom: 3rem;
 }
 
 .flex-btn {
-    flex: 1;
-    max-width: 200px;
+    width: 100%;
+    max-width: 250px;
 }
 
 .footer-design {
@@ -515,8 +515,6 @@ h1, h2, h3, h4, h5, h6 {
     .couple-names-secondary { font-size: 3rem; }
     .time-box .number { font-size: 2rem; }
     .time-box .label { font-size: 0.75rem; }
-    .action-buttons { flex-direction: column; align-items: center; }
-    .flex-btn { width: 100%; max-width: 250px; }
     .parents-names h2 { font-size: 1.2rem; }
     .invite-text { font-size: 0.9rem; max-width: 95%; }
     .divider-ornament svg { max-width: 220px; }

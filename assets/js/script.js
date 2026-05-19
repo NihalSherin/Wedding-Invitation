@@ -195,4 +195,27 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // --- Location Modal Logic ---
+    const locationToggle = document.getElementById('location-toggle');
+    const locationModal = document.getElementById('location-modal');
+    const closeLocationModal = document.getElementById('close-location-modal');
+
+    if (locationToggle && locationModal && closeLocationModal) {
+        locationToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            locationModal.classList.remove('hidden');
+        });
+
+        closeLocationModal.addEventListener('click', () => {
+            locationModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        locationModal.addEventListener('click', (e) => {
+            if (e.target === locationModal) {
+                locationModal.classList.add('hidden');
+            }
+        });
+    }
+
 });
